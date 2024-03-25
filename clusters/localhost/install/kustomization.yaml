@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: wac-hospital  # chceme tieto objekty umiestniť do `wac-hospital` namespace
+                         # tento zapis preťaží hodnoty "namespace" vo všetkých objektoch
+
+
+commonLabels:
+  app.kubernetes.io/part-of: wac-hospital
+
+resources:
+- ../../../apps/fp-ambulance-ufe
+- ../../../apps/fp-ambulance-webapi
+
+components:
+- ../../../components/version-developers
+- https://github.com/filippetran/ambulance-webapi//deployments/kustomize/components/mongodb
+
+patches:
+- path: patches/ambulance-webapi.service.yaml
