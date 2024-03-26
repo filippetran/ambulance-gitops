@@ -19,6 +19,5 @@ patches:
     version: v1
     kind: Deployment
     name: ufe-controller
-
 components:
  - ../../../components/version-developers
