@@ -12,6 +12,7 @@ resources:
 - ../../../apps/fp-ambulance-ufe
 - ../../../apps/fp-ambulance-webapi
 - ../../../apps/mongo-express
+- ../../../apps/http-echo
 
 components:
 - ../../../components/version-developers
